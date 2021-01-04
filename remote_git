@@ -1,0 +1,35 @@
+#!/bin/bash
+NOW=$(date '+%F:%H:%M:%S')
+# setup your parameters
+ssh_host="git@github.com"
+remoteUrl="https://github.com/"
+user="Claodio"
+# ------------------------------
+
+repname="Chatting_myApp"
+if [ -z "$repname" ]
+then
+	echo "I can initialize a git repos when Repos Name is [NULL]"
+	exit 1
+fi
+
+echo "$repname"
+
+git_remoteAddress=`echo $ssh_host:$user/$repname.git`
+git_remoteUrl=`echo $remoteUrl:$user/$repname.git`
+git remote add $repname $git_remoteAddress
+git remote add $repname $git_remoteUrl
+#Verify new remote
+git remote -v
+
+# $(git remote get-url "$ssh_host/$repname.git")
+# $(git remote get-url "$remoteUrl/$repname.git")
+
+printf "%s\n%s\n" "verify-address:$git_remoteAddress" "verify-url:$git_remoteUrl"
+
+git add .
+git status
+git commit -a -m"all in $repname is commit $NOW"
+git push origin master
+
+chmod +x ./remote_git
