@@ -30,6 +30,6 @@ $(git remote get-url "$git_remoteUrl")
 printf "%s\n%s\n%s\n" "verify-address:$git_remoteAddress" "verify-url:$git_remoteUrl" "listing-ssh:$ssh_home"
 
 git add . && git status && git commit -a -m"all in $repname is about to be committed to $GitHubAddress $NOW"
-git push origin master
+git push $repname master
 
 chmod +x ./remote_git
