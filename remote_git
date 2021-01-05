@@ -1,5 +1,6 @@
 #!/bin/bash
 NOW=$(date '+%F:%H:%M:%S')
+ssh_home=$(ls -al ~/.ssh)
 # setup your parameters
 ssh_host="git@github.com"
 remoteUrl="https://github.com/"
@@ -25,9 +26,9 @@ git remote -v
 # $(git remote get-url "$ssh_host/$repname.git")
 # $(git remote get-url "$remoteUrl/$repname.git")
 
-printf "%s\n%s\n" "verify-address:$git_remoteAddress" "verify-url:$git_remoteUrl"
+printf "%s\n%s\n%s\n" "verify-address:$git_remoteAddress" "verify-url:$git_remoteUrl" "listing-ssh:$ssh_home"
 
-git add . && git status && git commit -a -m"all in $repname is commit $NOW"
+git add . && git status && git commit -a -m"all in $repname is about commit $NOW to $git_remoteAddress"
 git push origin master
 
 chmod +x ./remote_git
