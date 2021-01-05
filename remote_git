@@ -24,8 +24,8 @@ git remote add $repname "ssh://$git_remoteUrl"
 git remote -v
 
 GitHubAddress=$(echo "[32m[ $git_remoteAddress[m")
-# $(git remote get-url "$ssh_host/$repname.git")
-# $(git remote get-url "$remoteUrl/$repname.git")
+$(git remote get-url "$git_remoteAddress")
+$(git remote get-url "$git_remoteUrl")
 
 printf "%s\n%s\n%s\n" "verify-address:$git_remoteAddress" "verify-url:$git_remoteUrl" "listing-ssh:$ssh_home"
 
