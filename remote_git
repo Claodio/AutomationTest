@@ -20,9 +20,9 @@ echo "$repname"
 git_remoteAddress=`echo $ssh_host:$user/$repname.git`
 git_remoteUrl=`echo $remoteUrl$user/$repname.git`
 GitHubAddress=$(echo "[32m[ $git_remoteAddress[m")
-git remote set-url $repname $GitHubAddress
+git remote set-url $repname $git_remoteAddress
 
-git remote add $repname "ssh://$GitHubAddress"
+git remote add $repname "ssh://$git_remoteAddress"
 git remote add $repname "ssh://$git_remoteUrl"
 #Verify new remote
 git remote -v
@@ -32,7 +32,7 @@ $(git remote get-url "$git_remoteAddress")
 $(git remote get-url "$git_remoteUrl")
 
 printf "%s\n%s\n%s\n" "verify-address:$git_remoteAddress" "verify-url:$git_remoteUrl" "listing-ssh:$ssh_home"
-$authenticatedUser
+# $authenticatedUser
 git add . && git status && git commit -a -m"all in $repname is about to be committed to $GitHubAddress $NOW"
 git push $repname master
 
