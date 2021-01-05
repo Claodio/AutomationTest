@@ -9,8 +9,8 @@ user="claodio"
 # ------------------------------
 read -p "[35m[1mSpecify the project Github repos name: [m" GithubReposName
 
-printGithubReposName=$(echo "[32m[ $GithubReposName[m")
-$printGithubReposName
+# printGithubReposName=$(echo "[32m[ $GithubReposName[m")
+# $printGithubReposName
 
 repname="$GithubReposName"
 if [ -z "$repname" ]
@@ -19,6 +19,10 @@ then
 	exit 1
 fi
 
+NoUserPass=$(ssh-add ~/.ssh/id_rsa)
+$NoUserPass
+authenticatedUser=$(ssh -T git@github.com)
+$authenticatedUser
 echo "$repname"
 
 git_remoteAddress=`echo $ssh_host:$user/$repname.git`
