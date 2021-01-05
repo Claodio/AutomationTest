@@ -5,7 +5,7 @@ authenticatedUser=$(ssh -T git@github.com)
 # setup your parameters
 ssh_host="git@github.com"
 remoteUrl="https://github.com/"
-user="claodio"
+user="Claodio"
 # ------------------------------
 
 repname="AutomationTest"
