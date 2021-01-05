@@ -7,7 +7,7 @@ remoteUrl="https://github.com/"
 user="Claodio"
 # ------------------------------
 
-repname="Chatting_myApp"
+repname="chap-app-templating"
 if [ -z "$repname" ]
 then
 	echo "I can initialize a git repos when Repos Name is [NULL]"
