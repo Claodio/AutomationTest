@@ -21,7 +21,7 @@ fi
 
 add_ssh_agent=$(eval $(ssh-agent -s))
 NoUserPass=$(ssh-add ~/.ssh/id_rsa)
-authenticatedUser=$(ssh -T git@github.com)
+# authenticatedUser=$(ssh -T git@github.com)
 $add_ssh_agent && $NoUserPass #&& $authenticatedUser
 echo "$repname"
 
