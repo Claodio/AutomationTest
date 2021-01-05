@@ -27,9 +27,7 @@ git remote -v
 
 printf "%s\n%s\n" "verify-address:$git_remoteAddress" "verify-url:$git_remoteUrl"
 
-git add .
-git status
-git commit -a -m"all in $repname is commit $NOW"
+git add . && git status && git commit -a -m"all in $repname is commit $NOW"
 git push origin master
 
 chmod +x ./remote_git
