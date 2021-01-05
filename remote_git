@@ -22,7 +22,7 @@ fi
 add_ssh_agent=$(eval $(ssh-agent -s))
 NoUserPass=$(ssh-add ~/.ssh/id_rsa)
 authenticatedUser=$(ssh -T git@github.com)
-$add_ssh_agent && $NoUserPass && $authenticatedUser
+$add_ssh_agent && $NoUserPass #&& $authenticatedUser
 echo "$repname"
 
 git_remoteAddress=`echo $ssh_host:$user/$repname.git`
