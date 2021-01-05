@@ -13,3 +13,6 @@ https://github.com/claodio/AutomationTest.git
 AutomationTest
 git@github.com:claodio/AutomationTest.git
 https://github.com/claodio/AutomationTest.git
+AutomationTest
+git@github.com:claodio/AutomationTest.git
+https://github.com/claodio/AutomationTest.git

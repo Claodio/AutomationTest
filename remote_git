@@ -19,6 +19,8 @@ then
 	exit 1
 fi
 
+sshagent=$(eval $(ssh-agent -s))
+$sshagent
 NoUserPass=$(ssh-add ~/.ssh/id_rsa)
 $NoUserPass
 authenticatedUser=$(ssh -T git@github.com)
