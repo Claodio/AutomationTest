@@ -8,9 +8,10 @@ remoteUrl="https://github.com/"
 user="claodio"
 # ------------------------------
 read -p "[35m[1mSpecify the project Github repos name: [m" GithubReposName
-printGithubReposName=$(echo "[32m[ $GithubReposName[m")
 
+printGithubReposName=$(echo "[32m[ $GithubReposName[m")
 $printGithubReposName
+
 repname="$GithubReposName"
 if [ -z "$repname" ]
 then
@@ -34,7 +35,7 @@ git remote -v
 # $(git remote get-url "$git_remoteAddress")
 # $(git remote get-url "$git_remoteUrl")
 
-printf "%s\n%s\n%s\n" "verify-address:$git_remoteAddress" "verify-url:$git_remoteUrl" "listing-ssh:$ssh_home"
+printf "%s\n%s\\n" "verify-address:$git_remoteAddress" "verify-url:$git_remoteUrl" #"listing-ssh:$ssh_home"
 printf "%s\n%s\n%s\n" "$GithubReposName" "$git_remoteAddress" "$git_remoteUrl" >> "GithubReposName.md"
 # $authenticatedUser
 git add . && git status && git commit -a -m"all in $repname is about to be committed to $GitHubAddress $NOW"
