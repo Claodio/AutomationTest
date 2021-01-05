@@ -16,7 +16,7 @@ fi
 
 echo "$repname"
 
-git_remoteAddress=`echo $ssh_host:$user/$repname.git`
+git_remoteAddress=`echo $ssh_host/$user/$repname.git`
 git_remoteUrl=`echo $remoteUrl$user/$repname.git`
 git remote add $repname "ssh://$git_remoteAddress"
 git remote add $repname "ssh://$git_remoteUrl"
