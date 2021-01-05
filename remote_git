@@ -9,10 +9,10 @@ user="Claodio"
 # ------------------------------
 read -p "[35m[1mSpecify the project Github repos name: [m" GithubReposName
 
-printGithubReposName="[31m[1m$GithubReposName[m"
-$printGithubReposName
+# printGithubReposName=$(`echo "[35m[1m"$GithubReposName"[m"`)
+# $printGithubReposName
 
-repname="$GithubReposName"
+repname="GithubReposName"
 if [ -z "$repname" ]
 then
 	echo "I can initialize a git repos when Repos Name is [NULL]"
@@ -25,7 +25,7 @@ echo "$repname"
 
 git_remoteAddress=`echo $ssh_host:$user/$repname.git`
 git_remoteUrl=`echo $remoteUrl$user/$repname.git`
-GitHubAddress=$(echo "[32m[1m$git_remoteAddress [m")
+GitHubAddress=$(echo "[32m[ $git_remoteAddress [m")
 
 git remote set-url $repname $git_remoteAddress
 git remote add $repname "ssh://$git_remoteAddress"
