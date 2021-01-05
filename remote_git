@@ -8,7 +8,7 @@ remoteUrl="https://github.com/"
 user="claodio"
 # ------------------------------
 
-repname="chap-app-templating"
+repname="chat-app"
 if [ -z "$repname" ]
 then
 	echo "I can initialize a git repos when Repos Name is [NULL]"
@@ -28,8 +28,8 @@ git remote add $repname "ssh://$git_remoteUrl"
 git remote -v
 
 
-$(git remote get-url "$git_remoteAddress")
-$(git remote get-url "$git_remoteUrl")
+# $(git remote get-url "$git_remoteAddress")
+# $(git remote get-url "$git_remoteUrl")
 
 printf "%s\n%s\n%s\n" "verify-address:$git_remoteAddress" "verify-url:$git_remoteUrl" "listing-ssh:$ssh_home"
 # $authenticatedUser
