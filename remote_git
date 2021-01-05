@@ -1,14 +1,14 @@
 #!/bin/bash
 NOW=$(date '+%F:%H:%M:%S')
 ssh_home=$(ls -al ~/.ssh)
-authenticatedUser=$(ssh -T git@github.com)
+# authenticatedUser=$(ssh -T git@github.com)
 # setup your parameters
 ssh_host="git@github.com"
 remoteUrl="https://github.com/"
 user="claodio"
 # ------------------------------
 
-repname="chat-app"
+repname="AutomationTest"
 if [ -z "$repname" ]
 then
 	echo "I can initialize a git repos when Repos Name is [NULL]"
