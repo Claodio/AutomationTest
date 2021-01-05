@@ -9,7 +9,7 @@ user="Claodio"
 # ------------------------------
 read -p "[35m[1mSpecify the project Github repos name: [m" GithubReposName
 
-printGithubReposName="[31m[1m"$GithubReposName"[m"
+printGithubReposName="[31m[1m$GithubReposName[m"
 $printGithubReposName
 
 repname="$GithubReposName"
@@ -25,7 +25,7 @@ echo "$repname"
 
 git_remoteAddress=`echo $ssh_host:$user/$repname.git`
 git_remoteUrl=`echo $remoteUrl$user/$repname.git`
-GitHubAddress=$(echo "[32m[$git_remoteAddress [m")
+GitHubAddress=$(echo "[32m[1m$git_remoteAddress [m")
 
 git remote set-url $repname $git_remoteAddress
 git remote add $repname "ssh://$git_remoteAddress"

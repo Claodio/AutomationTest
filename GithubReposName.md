@@ -5,3 +5,6 @@ https://github.com/Claodio/AutomationTest.git
 AutomationTest
 git@github.com:Claodio/AutomationTest.git
 https://github.com/Claodio/AutomationTest.git
+React_testApp
+git@github.com:Claodio/React_testApp.git
+https://github.com/Claodio/React_testApp.git
