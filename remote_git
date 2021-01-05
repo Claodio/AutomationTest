@@ -7,8 +7,12 @@ ssh_host="git@github.com"
 remoteUrl="https://github.com/"
 user="Claodio"
 # ------------------------------
+read -p "[35m[1mSpecify the project Github repos name: [m" GithubReposName
+printGithubReposName=$(echo "[32m[ $GithubReposName[m")
+printf "%s\n" "$GithubReposName" >> "GithubReposName.md"
 
-repname="AutomationTest"
+$printGithubReposName
+repname="$GithubReposName"
 if [ -z "$repname" ]
 then
 	echo "I can initialize a git repos when Repos Name is [NULL]"
@@ -27,6 +31,7 @@ git remote add $repname "ssh://$git_remoteUrl"
 #Verify new remote
 git remote -v
 
+# React_testApp, AutomationTest
 
 # $(git remote get-url "$git_remoteAddress")
 # $(git remote get-url "$git_remoteUrl")
