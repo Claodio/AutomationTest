@@ -1,13 +1,3 @@
 AutomationTest
-AutomationTest
-git@github.com:Claodio/AutomationTest.git
-https://github.com/Claodio/AutomationTest.git
-AutomationTest
-git@github.com:Claodio/AutomationTest.git
-https://github.com/Claodio/AutomationTest.git
-React_testApp
-git@github.com:Claodio/React_testApp.git
-https://github.com/Claodio/React_testApp.git
-AutomationTest
-git@github.com:Claodio/GithubReposName.git
-https://github.com/Claodio/GithubReposName.git
+git@github.com:claodio/AutomationTest.git
+https://github.com/claodio/AutomationTest.git

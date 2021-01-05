@@ -7,8 +7,11 @@ ssh_host="git@github.com"
 remoteUrl="https://github.com/"
 user="claodio"
 # ------------------------------
+read -p "[35m[1mSpecify the project Github repos name: [m" GithubReposName
+printGithubReposName=$(echo "[32m[ $GithubReposName[m")
+$printGithubReposName
 
-repname="AutomationTest"
+repname="$GithubReposName"
 if [ -z "$repname" ]
 then
 	echo "I can initialize a git repos when Repos Name is [NULL]"
@@ -20,8 +23,8 @@ echo "$repname"
 git_remoteAddress=`echo $ssh_host:$user/$repname.git`
 git_remoteUrl=`echo $remoteUrl$user/$repname.git`
 GitHubAddress=$(echo "[32m[ $git_remoteAddress[m")
-git remote set-url $repname $git_remoteAddress
 
+git remote set-url $repname $git_remoteAddress
 git remote add $repname "ssh://$git_remoteAddress"
 git remote add $repname "ssh://$git_remoteUrl"
 #Verify new remote
@@ -32,6 +35,7 @@ git remote -v
 # $(git remote get-url "$git_remoteUrl")
 
 printf "%s\n%s\n%s\n" "verify-address:$git_remoteAddress" "verify-url:$git_remoteUrl" "listing-ssh:$ssh_home"
+printf "%s\n%s\n%s\n" "$GithubReposName" "$git_remoteAddress" "$git_remoteUrl" >> "GithubReposName.md"
 # $authenticatedUser
 git add . && git status && git commit -a -m"all in $repname is about to be committed to $GitHubAddress $NOW"
 git push $repname master
